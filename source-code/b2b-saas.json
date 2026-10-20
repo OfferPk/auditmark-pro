@@ -1,0 +1,33 @@
+{
+  "id": "b2b-saas",
+  "companyName": "CloudMetrics Systems Inc.",
+  "websiteUrl": "https://cloudmetrics.io",
+  "contactEmail": "compliance@cloudmetrics.io",
+  "jurisdiction": "GLOBAL_GDPR_CCPA",
+  "jurisdictionTitle": "Global B2B SaaS Privacy & Data Processing Agreement",
+  "businessType": "saas",
+  "dataCollected": [
+    "Business Work Email",
+    "Corporate Billing Details",
+    "Application Usage Logs",
+    "Session Telemetry",
+    "Workspace Metadata"
+  ],
+  "thirdParties": [
+    "AWS Cloud Infrastructure",
+    "Stripe Billing",
+    "PostHog Analytics",
+    "HubSpot CRM",
+    "Intercom Customer Chat"
+  ],
+  "userRights": [
+    "Right to Object to Processing",
+    "Right of Rectification",
+    "Access & Export via API",
+    "Standard Contractual Clauses (SCCs)"
+  ],
+  "bannerTheme": "indigo",
+  "bannerPosition": "floating-right",
+  "dpoName": "Chief Information Security Officer (CISO)",
+  "retentionPeriod": "Duration of active subscription plus 90 days grace period, after which customer tenant data is hard deleted."
+}

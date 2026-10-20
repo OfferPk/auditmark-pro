@@ -1,0 +1,447 @@
+/* AuditMark Pro - Compliance Suite Stylesheet */
+:root {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+  --bg-primary: #070d17;
+  --bg-secondary: #0f172a;
+  --bg-card: rgba(15, 23, 42, 0.75);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-focus: #10b981;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-sub: #64748b;
+
+  --accent-primary: #10b981;
+  --accent-hover: #059669;
+  --accent-glow: rgba(16, 185, 129, 0.25);
+  --cyan-accent: #06b6d4;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.app-header {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-icon {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #fff;
+  box-shadow: 0 0 15px var(--accent-glow);
+}
+
+.brand-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.badge-tag {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px solid rgba(16, 185, 129, 0.4);
+  color: #34d399;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 9999px;
+  text-transform: uppercase;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+/* Buttons */
+.btn {
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.45rem 0.95rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.15s ease;
+  border: 1px solid transparent;
+}
+.btn-primary { background: var(--accent-primary); color: #042f2e; font-weight: 700; }
+.btn-primary:hover { background: var(--accent-hover); color: #fff; box-shadow: 0 0 12px var(--accent-glow); }
+.btn-secondary { background: rgba(255, 255, 255, 0.05); border-color: var(--border-color); color: var(--text-main); }
+.btn-secondary:hover { background: rgba(255, 255, 255, 0.1); }
+.btn-sm { padding: 0.3rem 0.65rem; font-size: 0.78rem; }
+
+/* Main Split View */
+.main-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  height: calc(100vh - 61px);
+  overflow: hidden;
+}
+
+@media (max-width: 1080px) {
+  .main-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    overflow: visible;
+  }
+}
+
+/* Sidebar Configurator */
+.sidebar-panel {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.panel-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-tab-btn {
+  flex: 1;
+  padding: 0.75rem 0.5rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+.sidebar-tab-btn:hover { color: var(--text-main); }
+.sidebar-tab-btn.active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.25rem;
+}
+
+.form-group {
+  margin-bottom: 0.95rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #cbd5e1;
+  margin-bottom: 0.35rem;
+}
+
+.form-control {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 0.55rem 0.75rem;
+  font-size: 0.88rem;
+  color: #fff;
+  font-family: inherit;
+  transition: border-color 0.15s ease;
+}
+.form-control:focus {
+  outline: none;
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+/* Right Stage Panel */
+.stage-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: #090e17;
+}
+
+.stage-nav {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(15, 23, 42, 0.6);
+  padding: 0 1.5rem;
+}
+
+.stage-tab {
+  padding: 0.85rem 1.15rem;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.15s ease;
+}
+.stage-tab:hover { color: var(--text-main); }
+.stage-tab.active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.stage-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* Policy Document Sheet */
+.policy-sheet {
+  background: #ffffff;
+  color: #1e293b;
+  border-radius: 8px;
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.policy-sheet h1 { font-size: 1.65rem; color: #0f172a; margin-bottom: 0.5rem; }
+.policy-sheet h2 { font-size: 1.15rem; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.4rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 0.25rem; }
+.policy-sheet p { margin-bottom: 0.85rem; }
+.policy-sheet ul { padding-left: 1.5rem; margin-bottom: 1rem; }
+.policy-sheet li { margin-bottom: 0.35rem; }
+
+/* Compliance Score Bar */
+.compliance-meter {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.meter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.meter-score {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.meter-bar-track {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.meter-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #06b6d4);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+/* Checklist Cards */
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.85rem;
+  margin-bottom: 0.65rem;
+}
+
+.check-item input[type="checkbox"] {
+  margin-top: 0.25rem;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent-primary);
+}
+
+.check-item-title {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #f1f5f9;
+}
+
+.check-item-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* Embed Code Box */
+.code-box {
+  background: #020617;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 1rem;
+  font-family: monospace;
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-height: 280px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+/* ========================================================
+   EMBEDDABLE COOKIE BANNER WIDGET STYLES (Lightweight)
+   ======================================================== */
+.auditmark-banner-root {
+  font-family: var(--font-sans);
+  position: fixed;
+  z-index: 999999;
+  transition: all 0.3s ease;
+}
+
+.auditmark-banner-root.pos-bottom-bar {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.25rem 2rem;
+}
+
+.auditmark-banner-root.pos-floating-right {
+  bottom: 1.5rem;
+  right: 1.5rem;
+  max-width: 440px;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.auditmark-banner-root.theme-dark {
+  background: #0f172a;
+  color: #f8fafc;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.auditmark-banner-root.theme-indigo {
+  background: #1e1b4b;
+  color: #f8fafc;
+  border: 1px solid rgba(99, 102, 241, 0.3);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.7);
+}
+
+.auditmark-banner-root.theme-emerald {
+  background: #064e3b;
+  color: #f8fafc;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  box-shadow: 0 20px 40px rgba(6, 78, 59, 0.5);
+}
+
+.auditmark-banner-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.auditmark-banner-desc {
+  font-size: 0.85rem;
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  line-height: 1.45;
+}
+
+.auditmark-banner-btn-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.auditmark-btn-accept {
+  background: #10b981;
+  color: #022c22;
+  font-weight: 700;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.auditmark-btn-decline {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.auditmark-btn-prefs {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0.5rem;
+}

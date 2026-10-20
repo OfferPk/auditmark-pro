@@ -1,0 +1,31 @@
+{
+  "id": "uae-enterprise",
+  "companyName": "Al-Mirage Holdings FZ-LLC",
+  "websiteUrl": "https://almirageholdings.ae",
+  "contactEmail": "dpo@almirageholdings.ae",
+  "jurisdiction": "UAE_PDPL",
+  "jurisdictionTitle": "UAE Federal Decree-Law No. 45/2021 (PDPL) & DIFC/ADGM Compliance Policy",
+  "businessType": "enterprise",
+  "dataCollected": [
+    "Emirates ID / Passport Copy (KYC)",
+    "Contact Information & Mobile Number",
+    "Commercial License Records",
+    "Investor Financial Profile",
+    "Website Activity Cookies"
+  ],
+  "thirdParties": [
+    "UAE Central Bank Compliant Gateway",
+    "Microsoft Azure UAE North",
+    "Salesforce Dubai Cloud"
+  ],
+  "userRights": [
+    "Right to Revoke Consent",
+    "Right to Restrict Processing",
+    "Cross-Border Transfer Protection",
+    "Notification of Data Breaches"
+  ],
+  "bannerTheme": "emerald",
+  "bannerPosition": "bottom-bar",
+  "dpoName": "Head of Legal & Compliance",
+  "retentionPeriod": "10 years in adherence to UAE Commercial Transactions Law and Anti-Money Laundering (AML) regulatory statutes."
+}

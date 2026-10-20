@@ -1,0 +1,33 @@
+{
+  "id": "shopify-ecommerce",
+  "companyName": "Nova Brands Direct LLC",
+  "websiteUrl": "https://novabrandsdirect.com",
+  "contactEmail": "privacy@novabrandsdirect.com",
+  "jurisdiction": "US_UK_EU",
+  "jurisdictionTitle": "GDPR (UK/EU) & US (CCPA/CPRA) E-Commerce Policy",
+  "businessType": "e-commerce",
+  "dataCollected": [
+    "Contact Details (Name, Email, Phone)",
+    "Shipping & Billing Address",
+    "Payment Token Data",
+    "Browsing Behavior & Cart Cookies",
+    "IP & Device Telemetry"
+  ],
+  "thirdParties": [
+    "Shopify Payments / Stripe",
+    "Klaviyo Email Marketing",
+    "Google Analytics 4",
+    "Meta / Facebook Pixel",
+    "TikTok Ads Pixel"
+  ],
+  "userRights": [
+    "Right of Access",
+    "Right to Deletion / Forget",
+    "Right to Opt-Out of Sale/Share",
+    "Data Portability"
+  ],
+  "bannerTheme": "dark",
+  "bannerPosition": "bottom-bar",
+  "dpoName": "Data Privacy Manager",
+  "retentionPeriod": "7 years for tax and purchase transactions; 12 months for abandoned checkout and marketing cookies."
+}
